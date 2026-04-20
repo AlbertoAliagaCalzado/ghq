@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GiftedIQ.Application/GiftedIQ.Application.csproj" />
+  <Project Path="GiftedIQ.Domain/GiftedIQ.Domain.csproj" />
+  <Project Path="GiftedIQ.Infrastructure/GiftedIQ.Infrastructure.csproj" />
+  <Project Path="GiftedIQ.Presentation/GiftedIQ.Presentation.csproj" />
+</Solution>
