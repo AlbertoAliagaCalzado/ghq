@@ -75,3 +75,19 @@
 - Justificación: Los repositorios (INotificationRepository) solo deben encargarse de agregar o buscar entidades, no de guardar cambios en la base de datos de forma aislada. Es la capa de Aplicación (a través del Handler) la que conoce cuándo es seguro confirmar la transacción completa.
 
 - Trade-off: Requiere inyectar dos dependencias (NotificationRepository y UnitOfWork) en los Handlers de comandos de escritura, pero asegura que si se agregan múltiples acciones en un mismo Handler, todas se guarden en una sola transacción.
+
+11. Uso estricto de DTOs (Data Transfer Objects)
+
+- Decisión: Nunca exponer las Entidades de Dominio (Notification) directamente a través de la API. En su lugar, se utilizan los objetos de transferencia de datos (DTOs) en la capa de Aplicación.
+
+- Justificación: Eliminar la posibilidad de exposición de datos sensibles. Si en el futuro se agrega cualquier propiedad a la entidad Notification, el frontend no se verá afectado. Además, permite adaptar la estructura de los datos específicamente para las necesidades de la UI.
+
+- Trade-off: Requiere escribir código adicional (boilerplate) en los Handlers para mapear las propiedades de la entidad al DTO.
+
+12. Traducción de estados a códigos HTTP
+
+- Decisión: El controlador se encarga explícitamente de evaluar el resultado del Query Handler (si devuelve null, un JSON, etc.) y traducirlo al código de estado HTTP semánticamente correcto (ej. 404 Not Found).
+
+- Justificación: Mantiene la capa de Aplicación separada de la web. Los Handlers no tienen que saber nada sobre HTTP. Es responsabilidad exclusiva de la capa de presentación interpretar ese resultado y cumplir con los estándares de diseño.
+
+- Trade-off: El controlador debe contener un mínimo de lógica condicional en lugar de simplemente pasar los datos.
