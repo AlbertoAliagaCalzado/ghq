@@ -115,3 +115,11 @@ Trade-off: Es necesario configurar estas conversiones explícitamente por cada V
 - Justificación: Se requiere que el "happy path" sea demostrable y se permite el uso de datos semilla. Una base de datos en memoria reduce drásticamente la fricción inicial para levantar el proyecto en local (no requiere instalar SQL Server ni configurar contenedores Docker complejos de base de datos de forma inmediata), permitiendo evaluar la arquitectura y el código funcional rápidamente.
 
 - Trade-off: No es una base de datos relacional real (no valida restricciones de integridad referencial complejas), por lo que antes de ir a producción, se entiende que debería cambiar por un proveedor de base de datos.
+
+16. Middleware Global de Excepciones
+
+- Decisión: Implementar un middleware personalizado para la captura global de excepciones en el pipeline de la API.
+
+- Justificación: Garantiza que el cliente siempre reciba una respuesta en formato JSON coherente, incluso ante errores inesperados. Esto evita la fuga de información sensible y captura todos los posibles errores.
+
+- Trade-off: Centralizar el manejo de errores puede ocultar detalles específicos si no se categorizan bien las excepciones, pero mejora drásticamente la mantenibilidad y la experiencia del usuario de la API.

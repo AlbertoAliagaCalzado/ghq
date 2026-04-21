@@ -4,10 +4,15 @@ using GiftedIQ.Domain.Repositories;
 using GiftedIQ.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,6 +29,8 @@ builder.Services.AddScoped<IUnitOfWork>(provider =>
     provider.GetRequiredService<GiftedIqDbContext>());
 
 var app = builder.Build();
+
+app.UseMiddleware<GiftedIQ.Presentation.Middlewares.ExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
