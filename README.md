@@ -1,4 +1,4 @@
-# GiftedIQ - Sistema de Notificaciones en Tiempo Real 🚀
+# NotifyHub - Sistema de Notificaciones en Tiempo Real 🚀
 
 Este proyecto es una solución Full-Stack desarrollada como prueba técnica, enfocada en la creación de un sistema de notificaciones reactivo y en tiempo real. Está diseñado siguiendo los principios de la **Arquitectura Hexagonal (Puertos y Adaptadores)** y aplicando el patrón **CQRS**.
 
@@ -55,3 +55,11 @@ Abre una terminal en la raíz del proyecto y ejecuta:
 
 - Frontend: http://localhost:5173
 - Swagger (API): http://localhost:5294/swagger
+
+### 3. Testing del Backend
+
+Desde la raíz del proyecto, ejecuta:
+
+```bash
+   dotnet test
+```

@@ -1,0 +1,10 @@
+**/.git
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/out
+**/node_modules
+**/dist
+NotifyHub.Frontend/node_modules
+NotifyHub.Frontend/dist

@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="NotifyHub.Application/NotifyHub.Application.csproj" />
+  <Project Path="NotifyHub.Domain/NotifyHub.Domain.csproj" />
+  <Project Path="NotifyHub.Infrastructure/NotifyHub.Infrastructure.csproj" />
+  <Project Path="NotifyHub.IntegrationTests/NotifyHub.IntegrationTests.csproj" />
+  <Project Path="NotifyHub.Presentation/NotifyHub.Presentation.csproj" />
+  <Project Path="NotifyHub.UnitTests/NotifyHub.UnitTests.csproj" />
+</Solution>

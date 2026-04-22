@@ -1,8 +1,0 @@
-<Solution>
-  <Project Path="GiftedIQ.Application/GiftedIQ.Application.csproj" />
-  <Project Path="GiftedIQ.Domain/GiftedIQ.Domain.csproj" />
-  <Project Path="GiftedIQ.Infrastructure/GiftedIQ.Infrastructure.csproj" />
-  <Project Path="GiftedIQ.IntegrationTests/GiftedIQ.IntegrationTests.csproj" />
-  <Project Path="GiftedIQ.Presentation/GiftedIQ.Presentation.csproj" />
-  <Project Path="GiftedIQ.UnitTests/GiftedIQ.UnitTests.csproj" />
-</Solution>
