@@ -161,3 +161,9 @@ Trade-off: Es necesario configurar estas conversiones explícitamente por cada V
 - Justificación: Al tener una Arquitectura Hexagonal, es sencillo aislar completamente la capa de aplicación inyectando mocks de las interfaces de infraestructura. Esto asegura que los tests sean extremadamente rápidos, predecibles y que validen estrictamente las reglas de negocio sin dependencias externas.
 
 - Trade-off: Las pruebas unitarias con mocks no garantizan que la integración real con SignalR funcione, para ello existen pruebas de integración.
+
+22. Tests de Integración End-to-End en Memoria (Backend)
+
+- Decisión: Utilizar WebApplicationFactory para levantar la API en memoria durante las pruebas de integración, aislando componentes de infraestructura externos (SignalR).
+
+- Justificación: Valida que el pipeline completo (Controladores, Routing, Middlewares de error, Inyección de Dependencias, Validación JSON) funciona correctamente en conjunto. Sustituir SignalR por un mock en este punto evita la inestabilidad de abrir puertos y sockets reales.

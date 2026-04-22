@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GiftedIQ.Domain\GiftedIQ.Domain.csproj" />
-    <ProjectReference Include="..\GiftedIQ.Application\GiftedIQ.Application.csproj" />
     <ProjectReference Include="..\GiftedIQ.Presentation\GiftedIQ.Presentation.csproj" />
   </ItemGroup>
 
